@@ -18,6 +18,12 @@
     }
     addLanguage("python")
 
-    
+    function addOptiLang(langNmae) {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langNmae))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLang("C++")
+    addOptiLang("Java")
 </script>
 </html>
