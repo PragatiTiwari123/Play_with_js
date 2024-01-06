@@ -12,6 +12,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
         }
         #container{
             height: 400px;
@@ -37,12 +38,28 @@
             opacity: 0;
             transition: transform ease 0.4s;
         }
+        .icon{
+            height: 200px;
+            width: 200px;
+            background-color: transparent;
+            margin-top: 20px;
+        }
+        .icon i{
+            color: #fff;
+            opacity: 0.8;
+            /* border: 2px solid black; */
+            font-size: 50px;
+        }
+
     </style>
 </head>
 <body>
     <div id="container">
         <img src="https://source.unsplash.com/900x900/?girl,beautiful" alt="model image">
         <i class="ri-heart-3-fill"></i>
+    </div>
+    <div class="icon">
+        <i class="ri-heart-3-fill icon1"></i>
     </div>
 </body>
 <script src="dom4.js"></script>
