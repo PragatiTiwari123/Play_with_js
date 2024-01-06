@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <title>DOM Project : Insta Love button</title>
+    <style>
+        body{
+            height: 100vh;
+            background-color: lightseagreen;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #container{
+            height: 400px;
+            width: 350px;
+            border-radius: 10px;
+            background-color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        #container img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            /* object-position: top; */
+        }
+        #container i{
+            color: #fff;
+            font-size: 75px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%) scale(0);
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="https://source.unsplash.com/900x900/?girl,beautiful" alt="model image">
+        <i class="ri-heart-3-fill"></i>
+    </div>
+</body>
+</html>
