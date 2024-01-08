@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOM Project : Multiple image Hovering Animation</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                color: #fff;
+                font-family:sans-serif;
+            }
+            html,body{
+                height: 100%;
+                width: 100%;
+            }
+            #main{
+                height: 100%;
+                width: 100%;
+                background-color: #111;
+                position: relative;
+            }
+            .elem{
+                height: 120px;
+                width: 100%;
+                /* background-color: red; */
+                border-bottom: 2px solid #fff;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                position: relative;
+            }
+            .elem h1{
+                font-size: 6vw;
+            }
+            .elem img{
+                height: 150px;
+                width: 150px;
+                border-radius: 50%;
+                object-fit: cover;
+                object-position: center;
+                position: absolute;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <div id="elem1" class="elem">
+                <h1>Black beauty</h1>
+                <img src="https://source.unsplash.com/900x900/?night,dark" alt="night">
+            </div>
+            <div class="elem">
+                <h1>V Army</h1>
+                <img src="https://source.unsplash.com/900x900/?night,beauty" alt="beauty">
+            </div>
+            <div class="elem">
+                <h1>Spiral</h1>
+                <img src="https://source.unsplash.com/900x900/?night,building" alt="building">
+            </div>
+            <div class="elem">
+                <h1>Super fine</h1>
+                <img src="https://source.unsplash.com/900x900/?car,evening" alt="car">
+            </div>
+        </div>
+    </body>
+    <script src="dom7.js"></script>
+</html>
