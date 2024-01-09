@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOB Project : Insta story</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+        body{
+            background-color: teal;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card{
+            height: 480px;
+            width: 350px;
+            background-color: #fff;
+            border-radius: 10px;
+            border: 2px solid #000;
+        }
+        .storiya{
+            height: 120px;
+            width: 100%;
+            /* background-color: red; */
+            border-bottom: 1px solid teal;
+            padding: 15px;
+            white-space: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+        .storiya::-webkit-scrollbar{
+            /* overflow: hidden; */
+            display: none;
+        }
+        .story{
+            height: 90px;
+            width: 90px;
+            /* background-color: blueviolet; */
+            border: 2px solid red;
+            border-radius: 50%;
+            display: inline-block;
+            overflow: hidden;
+        }
+        .story img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="storiya">
+            
+           
+        </div>
+    </div>
+    <script src="dom8.js"></script>
+</body>
+</html>
