@@ -26,6 +26,17 @@
             background-color: #fff;
             border-radius: 10px;
             border: 2px solid #000;
+            position: relative;
+            overflow: hidden;
+        }
+        .full-screen{
+            height: 100%;
+            width: 100%;
+            /* background-color: red;  */
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+            display: none; 
         }
         .storiya{
             height: 120px;
@@ -49,6 +60,7 @@
             border-radius: 50%;
             display: inline-block;
             overflow: hidden;
+            margin-right: 5px;
         }
         .story img{
             height: 100%;
@@ -60,6 +72,9 @@
 </head>
 <body>
     <div class="card">
+        <div class="full-screen">
+
+        </div>
         <div class="storiya">
             
            
