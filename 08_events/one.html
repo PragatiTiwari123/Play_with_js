@@ -19,12 +19,99 @@
             <li><img width="100px" id="photoshop" src="https://source.unsplash.com/900x900/?night,beauty" alt="photoshop"></li>
             <li><img width="100px" id="japan" src="https://source.unsplash.com/900x900/?japan,building" alt="photoshop"></li>
             <li><img width="100px" id="river" src="https://source.unsplash.com/900x900/?river,rabbit" alt="photoshop"></li>
+            <!-- <li><img width="100px" id="owl" src="https://source.unsplash.com/900x900/?owl,moon" alt="photoshop" onclick="alert('OWL')"></li>  Approach number one-->
             <li><img width="100px" id="owl" src="https://source.unsplash.com/900x900/?owl,moon" alt="photoshop"></li>
             <li><img width="100px" id="prayer" src="https://source.unsplash.com/900x900/?pray,moon" alt="photoshop"></li>
             <li><a href="https://google.com" id="google" style="text-decoration: none; color: #fff;">Google</a></li>
         </ul>
     </div>
-    
-    <script src="script.js"></script>
 </body>
+<script>
+
+    //   Approach number 2
+    //   document.getElementById('owl').onclick = function(){
+    //     alert('owl')
+    //   }  
+
+    //   Approach number 3  :: Mordern Approach to use
+    document.getElementById('owl').addEventListener("click",function(e){
+    //     alert('owl')
+    },false)
+
+    //   Approach number 4
+    //   attachEvent()
+
+    //   Approach number 5
+    //   jQuery - on
+
+    document.getElementById('owl').addEventListener("click",function(e){
+        // console.log(e);
+    },false)
+
+    // type , timestamp , preventdefault() ,target , toElement , srcElement , currentTarget
+    // clientX , clientY , offset , screenX ,screenY
+    // altkey , ctrlkey , shiftkey , keycode
+
+    //Event Propogation
+
+    // Event Bubbling
+
+    document.getElementById('images').addEventListener("click",function(e){
+        // console.log("Clicked inside the ul");
+    },false)
+
+    document.getElementById('owl').addEventListener("click",function(e){
+        // console.log("Owl Clicked");    // Execute first
+    },false)
+
+    // Event Capturing
+
+    document.getElementById('images').addEventListener("click",function(e){
+        // console.log("Clicked inside the ul"); // Execute first
+    },true)
+
+    document.getElementById('owl').addEventListener("click",function(e){
+        // console.log("Owl Clicked");   
+    },true)
+
+    document.getElementById('images').addEventListener("click",function(e){
+        // console.log("Clicked inside the ul"); // not execute because of stopPropogation
+    },false)
+
+    document.getElementById('owl').addEventListener("click",function(e){
+        // console.log("Owl Clicked");  // Execute first
+        // e.stopPropagation();    // it stops the bubbling  
+    },false)
+
+    document.getElementById('google').addEventListener('click',function(e){
+        // console.log("Google Clicked");
+        e.preventDefault(); // prevent the default behaviour 
+    })
+
+
+    // GOAL : To remove the li by clicking on it
+
+    document.querySelector('#images').addEventListener('click',function(e){
+
+        // 1st approach
+
+        // console.log(e.target.parentNode);
+        let removeIt = e.target.parentNode; //li => ul pr click krne pr ; ul => body pr click krne pr
+
+        // removeIt.remove();  // new approach  // problem is when we clicked on link 'google' it remove all list items
+        // # SPIL OVER
+
+        // 2nd Approach
+
+        // removeIt.parentNode.removeChild(removeIt);
+
+        // console.log(e.target.tagName);
+
+        if(e.target.tagName === 'IMG'){
+            let removeIt = e.target.parentNode;
+            removeIt.remove(); 
+        }
+
+    },false)
+</script>
 </html>
