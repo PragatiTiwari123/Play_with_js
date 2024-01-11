@@ -9,7 +9,7 @@ con.addEventListener("dblclick",function () {
         love.style.opacity = '0';        
     },2000) 
     setTimeout(function () {
-        love.style.transform = 'translate(-50%,-50%) scale(0)';        
+        love.style.transform = 'translate(-50%,-50%)';        
     },2000)  
 })
 var flag = 0;
@@ -21,7 +21,7 @@ icon.addEventListener("click",function () {
             love.style.opacity = '0';        
         },2000) 
         setTimeout(function () {
-            love.style.transform = 'translate(-50%,-50%) scale(0)';        
+            love.style.transform = 'translate(-50%,-50%)';        
         },2000) 
         flag=1;
     }
