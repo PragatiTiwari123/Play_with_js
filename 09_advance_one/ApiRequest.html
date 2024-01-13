@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 80vh;
+            background-color: #212121;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            /* flex-direction: column; */
+        }
+        .card{
+            color: #fff;
+            height: 500px;
+            width: 500px;
+        }
+        button{
+            background-color: black;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin: 20%;
+        }
+    </style>
+</head>
+<body>
+    <!-- XMLHttpRequest: readyState property -->
+    <!-- Value	State	                Description
+            0	UNSENT	                Client has been created. open() not called yet.
+            1	OPENED	                open() has been called.
+            2	HEADERS_RECEIVED	    send() has been called, and headers and status are available.
+            3	LOADING	Downloading;    responseText holds partial data.
+            4	DONE	                The operation is complete. -->
+                <button class="btn">Click me to see the card</button>
+                <div class="card"></div>
+</body>
+<script>
+    const requestURL = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET",requestURL);
+    // console.log("Here");
+    // console.log(xhr.readyState); //1
+    let photo;
+    let follower;
+    xhr.onreadystatechange = function(){
+        // console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText);
+            // console.log(typeof data); // response is in string
+
+            // console.log(this.responseText); //current context object the response with all the values within this
+            // console.log(data.followers);
+            follower = data.followers;
+            photo = data.avatar_url;
+            // console.log(photo);
+        }
+    }
+    document.querySelector(".btn").addEventListener('click',function(){
+        document.querySelector('.card').innerHTML = `
+                <img src="${photo}" alt="" height=50% width=50%>
+                <h3>Github Followers : ${follower}</h3>
+            `
+    })
+    xhr.send();
+</script>
+</html>
