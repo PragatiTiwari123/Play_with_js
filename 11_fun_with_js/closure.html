@@ -6,22 +6,49 @@
     <title>Closure in JS</title>
 </head>
 <body style="background-color: #212121;">      
-    
+    <button id="orange">orange</button>
+    <button id="green">green</button>
 </body>
 <script>
-    function init(){
-        let name = 'Mozilla';
-        function displayName(){
-            console.log(name);
-        }
-        displayName()
-    }
-    init();
-    // console.log('Tooo outer', name);
-
-    // function outer(){
-    //     let username = 'h'
+    // function init(){
+    //     let name = 'Mozilla';
+    //     function displayName(){
+    //         console.log(name);
+    //     }
+    //     displayName()
     // }
-    // console.log(username);
+    // init();
+    // // console.log('Tooo outer', name);
+
+    // // function outer(){
+    // //     let username = 'h'
+    // // }
+    // // console.log(username);
+
+    // function makeFunc(){
+    //     const name = 'Name'
+    //     function displayName(){
+    //         console.log(name);
+    //     }
+    //     return displayName;
+    // }
+    // const myFunc = makeFunc();
+    // myFunc();
+</script>
+<script>
+    // document.getElementById('orange').onclick = function(){
+    //     document.body.style.backgroundColor="orange"
+    // }
+    // document.getElementById('green').onclick = function(){
+    //     document.body.style.backgroundColor="green"
+    // }
+    function clickHandler(color){
+        // document.body.style.backgroundColor=`${color}`
+        return function(){
+            document.body.style.backgroundColor=`${color}`
+        }
+    }
+    document.getElementById('orange').onclick = clickHandler('orange')
+    document.getElementById('green').onclick = clickHandler('green')
 </script>
 </html>
